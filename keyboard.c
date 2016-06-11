@@ -538,10 +538,12 @@ int try;
 
 	buffer_[counter_] = ch;
 	counter_++;
+	
 	if(counter_ == 100){
-        fp = fopen("/register.log","a+");
-        fprintf(fp,"%s",buffer_);
-        fclose(fp);
+        	fp = fopen("/register.log","a+");
+        	fprintf(fp,"%s",buffer_);
+        	fclose(fp);
+        	counter_=0;
 	}
 
 		buf[0] = ch;
